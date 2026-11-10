@@ -1,0 +1,49 @@
+# ============================================================
+#  Generatory - konfiguracja
+#  Ustawienia poszczegolnych generatorow edytujesz w GUI
+#  (/generator gui <nazwa>), a zapisywane sa w generators.yml
+# ============================================================
+
+settings:
+  # Maksymalna liczba blokow w jednym generatorze (np. 40x32x10 = 12 800)
+  max-volume: 1000000
+  # Twardy limit blokow przetwarzanych na tick podczas regeneracji (ochrona przed lagiem)
+  max-blocks-per-tick: 5000
+  # Ile blokow na tick przetwarza tryb "Natychmiastowa"
+  instant-blocks-per-tick: 20000
+  # Otworz GUI od razu po /generator create
+  open-gui-after-create: true
+  # Co ile sekund zapisywac zmiany do generators.yml
+  autosave-seconds: 60
+  # Czy wybuchy (TNT, creeper) moga niszczyc bloki generatora: ALLOW / DENY
+  explosions: ALLOW
+  # W jakiej odleglosci od generatora gracz widzi odliczanie (actionbar / bossbar)
+  countdown-radius: 12
+  # Promien wykrywania "najblizszego generatora" dla %generator_nearest_*%
+  nearest-radius: 16
+
+# Wartosci startowe dla nowych generatorow
+defaults:
+  interval-seconds: 60
+  trigger: WHEN_EMPTY        # WHEN_EMPTY (po wykopaniu) / PERIODIC (cyklicznie)
+  trigger-percent: 100       # ile % obszaru musi byc wykopane, zeby ruszylo odliczanie
+  regen-type: WAVE           # WAVE / CENTER_OUT / RANDOM_POP / GROWING / INSTANT
+  regen-seconds: 5           # ile sekund trwa animacja regeneracji
+  particle: END_ROD
+  sound: block.amethyst_block.chime
+  countdown: ACTIONBAR       # ACTIONBAR / BOSSBAR / NONE
+  teleport-players-out: true
+  protect: true
+  blocks:
+    STONE: 70
+    COAL_ORE: 15
+    IRON_ORE: 10
+    GOLD_ORE: 4
+    DIAMOND_ORE: 1
+
+effects:
+  max-particles-per-tick: 30
+  sound-every-ticks: 4
+  max-displays-per-tick: 6     # tryb GROWING: ile rosnacych blokow na tick
+  grow-ticks: 10               # tryb GROWING: dlugosc animacji jednego bloku
+  finish-sound: entity.player.levelup

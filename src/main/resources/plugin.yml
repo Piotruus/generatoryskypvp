@@ -1,0 +1,19 @@
+name: Generatory
+version: '${project.version}'
+main: pl.generatory.GeneratorsPlugin
+api-version: '1.21'
+authors: [Generatory]
+description: Obszarowe generatory (regenerujace sie kopalnie) z GUI, animacjami i PlaceholderAPI.
+softdepend: [PlaceholderAPI]
+commands:
+  generator:
+    description: Zarzadzanie generatorami
+    usage: /generator help
+    aliases: [gen, generatory, generators]
+permissions:
+  generator.admin:
+    description: Dostep do komend, rozdzki i GUI generatorow
+    default: op
+  generator.bypass:
+    description: Pozwala stawiac bloki w chronionych generatorach
+    default: op
